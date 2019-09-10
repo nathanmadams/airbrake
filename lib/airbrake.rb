@@ -117,6 +117,9 @@ module Airbrake
     # Sends the notice unless it is one of the default ignored exceptions
     # @see Airbrake.notify
     def notify_or_ignore(exception, opts = {})
+      puts "AIRBRAKE"
+      puts exception
+      puts opts
       notice = build_notice_for(exception, opts)
       send_notice(notice) unless notice.ignore?
     end
